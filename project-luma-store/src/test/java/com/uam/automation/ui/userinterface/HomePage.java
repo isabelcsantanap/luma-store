@@ -31,4 +31,8 @@ public class HomePage extends PageObject {
         public static Target COUNTRY = Target.the("country").located(By.name("country_id"));
         public static Target TELEPHONE = Target.the("phone").located(By.name("telephone"));
         //CAMPOS HASTA TELEFONO DILIGENCIADOS CORRECTAMENTE
+        public static Target METHOD = Target.the("method").located(By.name("ko_unique_1"));
+        public static Target NEXT_BUTTON = Target.the("Next button").located(By.cssSelector("button[data-role='opc-continue']"));
+        public static Target ORDER_BUTTON = Target.the("Order button").located(By.cssSelector("button[title='Place Order']"));
+
 }

@@ -51,14 +51,19 @@ public class ShippingFormAddress implements Task {
                 SelectFromOptions.byVisibleText(state).from(HomePage.STATE),
                 Enter.theValue(postcode).into(POST_CODE),
                 SelectFromOptions.byVisibleText(country).from(HomePage.COUNTRY),
-                Enter.theValue(telephone).into(TELEPHONE)
+                Enter.theValue(telephone).into(TELEPHONE),
+                Click.on(METHOD), //Click envio por defecto
+                Click.on(NEXT_BUTTON),
+                Click.on(ORDER_BUTTON)
         );
     }
 
     public static ShippingFormAddress with(String name, String lastname, String company,
                                            String streetAddress, String city, String state,
                                            String postcode, String country, String telephone) {
-        return new ShippingFormAddress(name, lastname, company, streetAddress, city, state, postcode, country, telephone);
+
+        return new ShippingFormAddress(name, lastname, company, streetAddress,
+                city, state, postcode, country, telephone);
 
     }
 
