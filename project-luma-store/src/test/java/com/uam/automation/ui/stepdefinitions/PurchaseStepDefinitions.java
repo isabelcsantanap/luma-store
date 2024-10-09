@@ -29,7 +29,8 @@ public class PurchaseStepDefinitions {
         actor.attemptsTo(
                 ShippingFormAddress.with("Isabel", "Santana",
                         "Autonoma", "Carrera 20 5-20",
-                        "Manizales", "California", "00000"));
+                        "Manizales", "California", "00000",
+                        "United States", "311000000"));
     }
 }
 

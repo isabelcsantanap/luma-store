@@ -22,10 +22,12 @@ public class ShippingFormAddress implements Task {
     private final String city;
     private final String state;
     private final String postcode;
+    private final String country;
+    private final String telephone;
 
     public ShippingFormAddress (String name, String lastname, String company,
                                 String streetAddress, String city, String state,
-                                String postcode) {
+                                String postcode, String country, String telephone) {
         this.name = name;
         this.lastname = lastname;
         this.company = company;
@@ -33,6 +35,8 @@ public class ShippingFormAddress implements Task {
         this.city = city;
         this.state = state;
         this.postcode = postcode;
+        this.country = country;
+        this.telephone = telephone;
     }
 
     @Override
@@ -45,15 +49,16 @@ public class ShippingFormAddress implements Task {
                 Enter.theValue(streetAddress).into(STREET_ADDRESS),
                 Enter.theValue(city).into(CITY),
                 SelectFromOptions.byVisibleText(state).from(HomePage.STATE),
-                Enter.theValue(postcode).into(POST_CODE)
-
+                Enter.theValue(postcode).into(POST_CODE),
+                SelectFromOptions.byVisibleText(country).from(HomePage.COUNTRY),
+                Enter.theValue(telephone).into(TELEPHONE)
         );
     }
 
     public static ShippingFormAddress with(String name, String lastname, String company,
                                            String streetAddress, String city, String state,
-                                           String postcode) {
-        return new ShippingFormAddress(name, lastname, company, streetAddress, city, state, postcode);
+                                           String postcode, String country, String telephone) {
+        return new ShippingFormAddress(name, lastname, company, streetAddress, city, state, postcode, country, telephone);
 
     }
 

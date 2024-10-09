@@ -21,7 +21,6 @@ public class HomePage extends PageObject {
         public static Target SHOPPING_CART = Target.the("shopping cart").locatedBy("//span[@class='counter qty']/span[@class='counter-number']");
         public static Target PROCEED_TO_CHECKOUT_BUTTON = Target.the("Proceed to Checkout").located(By.id("top-cart-btn-checkout"));
 
-        //public static Target FIRST_NAME = Target.the("firstname").located(By.id("N06FUO2"));
         public static Target FIRST_NAME = Target.the("firstname").located(By.name("firstname"));
         public static Target LAST_NAME = Target.the("lastname").located(By.name("lastname"));
         public static Target COMPANY = Target.the("company").located(By.name("company"));
@@ -29,4 +28,7 @@ public class HomePage extends PageObject {
         public static Target CITY = Target.the("city").located(By.name("city"));
         public static Target STATE = Target.the("region_id").located(By.name("region_id"));
         public static Target POST_CODE = Target.the("postcode").located(By.name("postcode"));
+        public static Target COUNTRY = Target.the("country").located(By.name("country_id"));
+        public static Target TELEPHONE = Target.the("phone").located(By.name("telephone"));
+        //CAMPOS HASTA TELEFONO DILIGENCIADOS CORRECTAMENTE
 }
