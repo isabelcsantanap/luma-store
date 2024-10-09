@@ -21,13 +21,12 @@ public class HomePage extends PageObject {
         public static Target SHOPPING_CART = Target.the("shopping cart").locatedBy("//span[@class='counter qty']/span[@class='counter-number']");
         public static Target PROCEED_TO_CHECKOUT_BUTTON = Target.the("Proceed to Checkout").located(By.id("top-cart-btn-checkout"));
 
-        /*public static Target CUSTOMER_EMAIL_FIELD = Target.the("email field").located(org.openqa.selenium.By.id("customer-email"));
-        public static Target CUSTOMER_PASSWORD_FIELD = Target.the("password field").located(org.openqa.selenium.By.id("customer-password"));
-        public static Target CUSTOMER_LOGIN_BUTTON = Target.the("login button").located(By.id("customer-email-fieldset"));*/
-
-        public static Target FIRST_NAME = Target.the("first name").located(By.id("LGJJVMM"));
-        public static Target LAST_NAME = Target.the("last name").located(By.id("R2O6NFC"));
-        public static Target COMPANY = Target.the("company").located(By.id("T8YRU9B"));
-        public static Target STREET_ADDRESS = Target.the("street address").located(By.id("SSL287S"));
-        public static Target CITY = Target.the("city").located(By.id("IT5K9RY"));
+        //public static Target FIRST_NAME = Target.the("firstname").located(By.id("N06FUO2"));
+        public static Target FIRST_NAME = Target.the("firstname").located(By.name("firstname"));
+        public static Target LAST_NAME = Target.the("lastname").located(By.name("lastname"));
+        public static Target COMPANY = Target.the("company").located(By.name("company"));
+        public static Target STREET_ADDRESS = Target.the("street address").located(By.name("street[0]"));
+        public static Target CITY = Target.the("city").located(By.name("city"));
+        public static Target STATE = Target.the("region_id").located(By.name("region_id"));
+        public static Target POST_CODE = Target.the("postcode").located(By.name("postcode"));
 }

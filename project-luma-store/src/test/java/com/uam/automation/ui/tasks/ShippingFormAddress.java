@@ -1,11 +1,13 @@
 package com.uam.automation.ui.tasks;
 
+import com.uam.automation.ui.userinterface.HomePage;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.actions.SelectFromOptions;
 import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
 
@@ -18,25 +20,19 @@ public class ShippingFormAddress implements Task {
     private final String company;
     private final String streetAddress;
     private final String city;
-    /*private String postalCode;
-    private String phoneNumber;
-    private String shippingMethods;*/
+    private final String state;
+    private final String postcode;
 
-    public ShippingFormAddress (String name, String lastname, String company, String streetAddress, String city
-                                /*String postalCode, String phoneNumber, String shippingMethods*/) {
+    public ShippingFormAddress (String name, String lastname, String company,
+                                String streetAddress, String city, String state,
+                                String postcode) {
         this.name = name;
         this.lastname = lastname;
         this.company = company;
         this.streetAddress = streetAddress;
         this.city = city;
-        /*this.postalCode = postalCode;
-        this.phoneNumber = phoneNumber;
-        this.shippingMethods = shippingMethods;*/
-    }
-
-    public static Performable with() {
-
-        return null;
+        this.state = state;
+        this.postcode = postcode;
     }
 
     @Override
@@ -47,19 +43,17 @@ public class ShippingFormAddress implements Task {
                 Enter.theValue(lastname).into(LAST_NAME),
                 Enter.theValue(company).into(COMPANY),
                 Enter.theValue(streetAddress).into(STREET_ADDRESS),
-                Enter.theValue(city).into(CITY)
-                /*Enter.theValue(city).into(CITY),
                 Enter.theValue(city).into(CITY),
-                Enter.theValue(city).into(CITY),*/
-                //MoveMouse.to() mapear el atributo a o img
+                SelectFromOptions.byVisibleText(state).from(HomePage.STATE),
+                Enter.theValue(postcode).into(POST_CODE)
 
         );
     }
 
-    public static ShippingFormAddress with(String name, String lastname, String company, String streetAddress, String city
-                                           /*String postalCode, String phoneNumber, String shippingMethods*/) {
-
-        return new ShippingFormAddress(name, lastname, company, streetAddress, city);
+    public static ShippingFormAddress with(String name, String lastname, String company,
+                                           String streetAddress, String city, String state,
+                                           String postcode) {
+        return new ShippingFormAddress(name, lastname, company, streetAddress, city, state, postcode);
 
     }
 

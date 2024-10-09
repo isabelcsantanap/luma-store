@@ -14,8 +14,8 @@ public class Login implements Task {
         actor.attemptsTo(
             NavigateTo.theFormPage(),
                 Click.on(SIGN_IN_OPTION),
-                Enter.theValue("isabelc.santanap@autonoma.edu.co").into(EMAIL_FIELD),
-                Enter.theValue("Corcoran2024@").into(PASSWORD_FIELD),
+                Enter.theValue("icsantanap@gmail.com").into(EMAIL_FIELD),
+                Enter.theValue("Mundo123*").into(PASSWORD_FIELD),
                 Click.on(SIGN_IN_BUTTON)
                 //MoveMouse.to() mapear el atributo a o img
         );

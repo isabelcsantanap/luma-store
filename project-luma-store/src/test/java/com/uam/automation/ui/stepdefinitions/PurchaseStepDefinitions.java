@@ -13,25 +13,23 @@ public class PurchaseStepDefinitions {
    
     @Given("{actor} is on the homepage")
     public void navigatingOnInternet(Actor actor) {
-
         actor.wasAbleTo(
-                Login.with(),
-                Product.with(),
-                ShippingFormAddress.with()
+                Login.with()
         );
     }
 
-    @When("{actor} completes the process of purchasing items")//devuelve un actor que le ingreso en
+    @When("{actor} completes the process of purchasing items")
     public void submitsForm(Actor actor) {
         actor.attemptsTo(
-
-        );
-
+                Product.with());
     }
 
     @Then("{actor} transaction success message is generated")
     public void shouldSeeFormSubmitted(Actor actor) {
-
+        actor.attemptsTo(
+                ShippingFormAddress.with("Isabel", "Santana",
+                        "Autonoma", "Carrera 20 5-20",
+                        "Manizales", "California", "00000"));
     }
 }
 

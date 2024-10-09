@@ -19,13 +19,7 @@ import static
 @SelectClasspathResource("/features")
 @ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value =
         "io.cucumber.core.plugin.SerenityReporterParallel,pretty,timeline:build/test-results/timeline")
+
 public class SubmitFormRunner {
-
-    public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(
-
-                ShippingFormAddress.with("Juan", "Perez", "Manisol", "Calle 123", "Medellín")
-        );
-    }
 }
 
